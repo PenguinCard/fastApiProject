@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import users, items, xlsxs, pdfs, imgs, csvs
+from routes import files
 
 app = FastAPI()
 
@@ -20,12 +20,11 @@ app.add_middleware(
 )
 #############################
 
-app.include_router(users.router)
-app.include_router(items.router)
-app.include_router(xlsxs.router)
-app.include_router(pdfs.router)
-app.include_router(imgs.router)
-app.include_router(csvs.router)
+######## 라우팅 추가 ###########
+app.include_router(files.router)
+
+#############################
+
 
 @app.get("/")
 async def main_root():
