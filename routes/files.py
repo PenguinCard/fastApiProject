@@ -136,7 +136,7 @@ async def file_work(files: List[UploadFile] = File(...)):
         wb = load_workbook(filename=BytesIO(xlsx_file.file.read()))
         ws = wb.active
         
-        idx = 1;
+        idx = 1
         
         for row in ws.iter_rows(values_only=True):
             if idx != 1:
