@@ -7,6 +7,7 @@ app = FastAPI()
 
 ######## CORS 이슈 방지용 미들웨어
 origins = [
+    "http://127.0.0.1"
     "http://localhost",
     "http://54.180.119.10:3000",
     "http://localhost:3000"
