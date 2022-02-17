@@ -19,7 +19,7 @@ from typing import List
 router = APIRouter(prefix="/api/file", tags=["file"])
 
 # add Font
-pdfmetrics.registerFont(TTFont("D2Coding", "../font/D2Coding.ttf"))
+pdfmetrics.registerFont(TTFont("D2Coding", "D2Coding.ttf"))
 
 @router.get("/")
 async def img_root():
