@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -35,3 +36,6 @@ async def main_root():
 @app.get("/default/{item_id}")
 async def read_item(item_id: int):
     return { "item_id": item_id }
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, log_level="info")
